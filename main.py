@@ -1,7 +1,7 @@
 import pygame
-from constants import SCREEN_HEIGHT
-from constants import SCREEN_WIDTH
+from constants import SCREEN_HEIGHT, SCREEN_WIDTH
 from logger import log_state
+from player import Player
 
 
 def main():
@@ -20,6 +20,9 @@ def main():
     # Initialize delta time
     dt = 0
 
+    # Instantiate the player in the middle of the screen
+    player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
+
     # Game loop
     while True:
         log_state()
@@ -31,6 +34,9 @@ def main():
 
         # Fill the screen with solid black
         screen.fill("black")
+
+        # Re-render the player on the screen each frame
+        player.draw(screen)
 
         # Refresh the screen
         pygame.display.flip()
