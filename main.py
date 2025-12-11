@@ -35,6 +35,9 @@ def main():
         # Fill the screen with solid black
         screen.fill("black")
 
+        # Update player (rotation)
+        player.update(dt)
+
         # Re-render the player on the screen each frame
         player.draw(screen)
 
